@@ -1,0 +1,92 @@
+// 有序风格外衣
+// 通用列表a标签样式 
+@mixin list-item {
+    position: relative;
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.4em 0.4em 0.4em 2.5em;
+    *padding: 0.4em; /* for ie6/7 */
+    color: #444;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #ddd;
+    /* css3属性 */
+    border-radius: 0.3em; /* 制作圆角 */
+    cursor: pointer;
+    @include transition(all 0.3s ease-out);
+}
+
+/* transition 动画效果 */
+@mixin transition($value...) {
+    -moz-transition:  $value;
+    -webkit-transition: $value;
+    -o-transition: $value;
+    -ms-transition: $value;
+    transition: $value;
+}
+/* 2D转换-旋转 */
+@mixin rotate($value) {
+    -moz-transform: rotate($value); 
+    -webkit-transform: rotate($value); 
+    -o-transform: rotate($value); 
+    -ms-transform: rotate($value); 
+    -transform: rotate($value); 
+}
+ol {
+    counter-reset: li; /* 创建一个计数器 */
+    list-style: none; /* 清除列表默认的编码 */
+    *list-style: decimal; /* 让IE6/7具有默认的编码 */
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    ol {
+        margin: 0 0 0 2em; /* 给二级列表增加一定的左边距 */
+    }
+}
+
+.cg-rounded-list {
+    li {
+        @include list-item;
+        &:before {
+
+            content: counter(li);
+            counter-increment: li;
+            
+            position: absolute;
+            left: 0em;
+            top: 50%;
+            margin-top: -1em;
+            height: 2em;
+            width: 2em;
+            line-height: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            background-color: #87ceeb;
+            border: 0.3em solid #fff;
+            border-radius: 2em;
+            @include transition(all 0.3s ease-out);
+            z-index: 10;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: -1em;
+            top: 50%;
+            margin-top: -1em;
+            height: 2em;
+            width: 2em;
+            background-color: #fff;
+            z-index: 5;
+        }
+        &:hover {
+            background-color: #eee;
+            &:before {
+                /* 悬停时旋转 */
+                @include rotate(360deg);
+            }
+        }
+    }
+}

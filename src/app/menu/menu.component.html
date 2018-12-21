@@ -1,0 +1,12 @@
+<div class="menu-container">
+    <ul nz-menu [nzMode]="'inline'" >
+        <li nz-submenu *ngFor="let menu of menues">
+            <span title>{{menu.name}}</span>
+            <ul>
+                <li nz-menu-item *ngFor="let item of menu.item">
+                    <a [routerLink]="item.url">{{item.name}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
