@@ -1,3 +1,9 @@
 .menu-container {
-    padding: 10px 20px;
+    padding: 10px 20px 10px 20px;
+    min-height: calc(100vh - 133px);
+    box-sizing: border-box;
+
+    ul {
+        border-right: none;
+    }
 }

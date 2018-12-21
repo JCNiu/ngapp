@@ -7,28 +7,19 @@ export const MENUES: menu[] = [
         name: '样式模拟',
         item: [{
             index: 0,
-            name: 'list',
+            name: '列表 list',
             url: '/c-listView'
-        }]
+        },
+        {
+            index: 0,
+            name: '表格 table',
+            url: '/c-tableView'
+        }
+        ]
     },
     {
         index: 1, 
-        name: '列表 list', 
+        name: 'nz 样式', 
         url: '/list', 
-    },
-    {
-        index: 2, 
-        name: '表格 table', 
-        url: '/table', 
-    },
-    {
-        index: 3, 
-        name: '输入框 input', 
-        url: '/input', 
-    },
-    {
-        index: 4, 
-        name: '文字提示 tooltip', 
-        url: '/tooltip', 
-    },
+    }
 ];

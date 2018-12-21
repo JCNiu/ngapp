@@ -1,0 +1,116 @@
+.c-container {
+    width: 100%;
+    box-sizing: border-box;
+    
+    .c-content {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.demo-box {
+    position: relative;
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    .demo-label {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        padding: 0 10px;
+        background-color: #fff;
+    }
+
+    .demo {
+        width: 100%;
+        .demo-row {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            .demo-item {
+                margin-left: 10px;
+                span {
+                    margin-right: 5px;
+                }
+            }
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.demo-tabel1 {
+    max-width: none; 
+}
+.table-box {
+    // width: 1280px;
+    width: 100%;
+    height: 300px;
+}
+
+
+
+
+// 可滚动table
+ .fixed_header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+    thead {
+        display: block;
+        padding-right: 17px;
+        color: #333;
+        background-color: #fafafa;
+        border-bottom: 1px solid #e8e8e8;
+        tr {
+            th {
+                border-right: 1px solid #e8e8e8;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+
+    tbody{
+        display:block;
+        width: 100%;
+        overflow-y: scroll; // 即使高度足够也显示滚动背景占位
+        tr {
+            border-top: 1px solid #e8e8e8;
+            
+            td {
+                border-right: 1px solid #e8e8e8;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+            &:first-child {
+                border-top: none;
+            }
+        }
+    }
+
+    tr {
+        display: flex;
+    }
+    th, td {
+        flex: 1;
+        padding: 5px;
+        width: 200px;
+        text-align: left;
+    }
+}

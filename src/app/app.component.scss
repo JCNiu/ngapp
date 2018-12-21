@@ -5,9 +5,13 @@
     background-color: #fff;
 }
 .ant-layout-content {
-    padding: 10px 10px 0;
+    // padding: 10px 10px 0;
 }
 .content-wrap {
-    background-color: #fff;
-    border-radius: 4px;
+    padding: 0 10px;
+    
+    .content {
+        background-color:#fff;
+        // border-radius: 4px;
+    }
 }

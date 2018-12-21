@@ -1,0 +1,42 @@
+<div class="c-container">
+    <div class="c-content">
+
+        <div class="demo-box demo-tabel1">
+            <div class="demo-label">可滚动的 tbody</div>
+            <div class="demo">
+                <div class="demo-row">
+                    <p>模拟数据展示:</p>
+                    <!-- <input type="text" placeholder="row 1~99" [(ngModel)]="row" (keyup)="mockChange()">
+                    <input type="text" placeholder="col 1~39" [(ngModel)]="col" (keyup)="mockChange()"> -->
+                    <div class="demo-item">
+                        <span>row:</span>
+                        <nz-input-number [(ngModel)]="row" [nzMin]="1" [nzMax]="99" [nzStep]="1" (ngModelChange)="mockChange()"></nz-input-number>
+                    </div>
+                    <div class="demo-item">
+                        <span>col:</span>
+                        <nz-input-number [(ngModel)]="col" [nzMin]="1" [nzMax]="39" [nzStep]="1" (ngModelChange)="mockChange()"></nz-input-number>
+                    </div>
+                </div>
+                <div class="demo-row">
+                    <div class="table-box">
+                        <table class="fixed_header">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let row of theadDate">{{row}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of tbodyDate">
+                                    <td *ngFor="let item of row">
+                                        {{item}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
