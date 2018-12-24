@@ -70,3 +70,7 @@
     -webkit-transition: $value;	/* Safari 和 Chrome */
     -o-transition: $value;	/* Opera */
 }
+@mixin animation($value...) {
+    animation: $value;
+    -webkit-animation: $value; /* Safari 和 Chrome */
+}
