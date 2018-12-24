@@ -1,9 +1,17 @@
 .menu-container {
-    padding: 10px 20px 10px 20px;
+    // padding: 10px 20px 10px 20px;
+    padding: 10px;
     min-height: calc(100vh - 133px);
     box-sizing: border-box;
 
     ul {
         border-right: none;
+        li {
+            a{ 
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
     }
 }

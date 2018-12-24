@@ -6,6 +6,7 @@ import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { sAndSModule } from './sAndS/sAndS.module';
+import { cssErModule } from './cssEr/cssEr.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { sAndSModule } from './sAndS/sAndS.module';
     BrowserAnimationsModule,
     NgZorroAntdModule,
     AppRoutingModule,
-    sAndSModule
+    sAndSModule,
+    cssErModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

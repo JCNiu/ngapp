@@ -1,0 +1,72 @@
+.c-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    
+    .c-content {
+        position: relative;
+        padding: 10px;
+        width: 100%;
+        min-height: calc(100vh - 133px);
+        box-sizing: border-box;
+    }
+
+    h2 {
+        padding: 15px 0;
+        color: #00a3cf;
+        font-size: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .demo-wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 5px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        
+        
+        .demo-label {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            padding: 0 10px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #fff;
+        } 
+        .demo {
+
+        }
+    }
+
+    .c-fixed {
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 5px;
+    }
+}
+
+// 兼容前缀预处理
+@mixin transform($value...) {
+    transform: $value;
+    -ms-transform: $value;		/* IE 9 */
+    -webkit-transform: $value;	/* Safari and Chrome */
+    -o-transform: $value;		/* Opera */
+    -moz-transform: $value;		/* Firefox */
+}
+@mixin transition($value...) {
+    transition: $value;
+    -moz-transition: $value;	/* Firefox 4 */
+    -webkit-transition: $value;	/* Safari 和 Chrome */
+    -o-transition: $value;	/* Opera */
+}
