@@ -1,0 +1,66 @@
+@import '../csser';
+
+.demo1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    background-color: #684da3;
+    border-radius: 4px;
+
+    p {
+        margin: 0;
+        color: #fff;
+        font-size: 10em;
+        span {
+            position: relative;
+            display: inline-block;
+            margin: 0.1em;
+            // 保留3D转换
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            // 定义 3D 元素距视图的距离 (目前浏览器都不支持perspective属性 Chrome和Safari支持替代的-webkit-perspective属性)
+            -webkit-perspective: 500;
+            // 字体抗锯齿渲染
+            -webkit-font-smoothing: antialiased;
+
+            &:before,
+            &:after {
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: -1px;
+                // 设置旋转元素的基点位置
+                transform-origin: left top;
+                @include transition(all ease-out 0.3s);
+            }
+
+            &:before {
+                color: rgba(0, 0, 0, .2);
+                @include transform(scale(1.1, 1) skew(0,20deg));
+                z-index: 1;
+            }
+
+            &:after {
+                color: #684da3;
+                text-shadow: -1px 0 1px #684da3,
+                            1px 0 1px rgba(0, 0, 0, .8);
+                // @include transform(rotateY(-40deg));
+                @include transform(rotateY(-30deg));
+                z-index: 2;
+            }
+
+
+            &:hover {
+                &:before {
+                    @include transform(scale(1.1, 1) skew(0, 5deg));
+                }
+                &:after {
+                    @include transform(rotateY(-10deg));
+                }
+            }
+        }
+    }
+}

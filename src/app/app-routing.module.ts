@@ -9,17 +9,23 @@ import { antFlipComponent } from './cssEr/ant-flip/ant-flip.component';
 import { scrollComponent } from './cssEr/scroll/scroll.component';
 import { shadowComponent } from './cssEr/shadow/shadow.component';
 import { antButtonComponent } from './cssEr/ant-button/ant-button.component';
+import { fontComponent } from './cssEr/font/font.component';
+import { inputComponent } from './cssEr/input/input.component';
+import { priceListComponent } from './cssEr/price-list/price-list.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/cssEr-bevelangle', pathMatch: 'full' },
     { path: 'c-listview', component: cListComponent },
     { path: 'c-tableview', component: cTableComponent },
 
-    { path: 'cssEr-bevelangle', component: bevelAngleComponent },
-    { path: 'cssEr-antflip', component: antFlipComponent },
-    { path: 'cssEr-scroll', component: scrollComponent },
-    { path: 'cssEr-shadow', component: shadowComponent },
-    { path: 'ant-button', component: antButtonComponent }
+    { path: 'csser-bevelangle', component: bevelAngleComponent },
+    { path: 'csser-antflip', component: antFlipComponent },
+    { path: 'csser-scroll', component: scrollComponent },
+    { path: 'csser-shadow', component: shadowComponent },
+    { path: 'ant-button', component: antButtonComponent },
+    { path: 'csser-font', component: fontComponent },
+    { path: 'csser-input', component: inputComponent },
+    { path: 'price-list', component: priceListComponent }
 ]
 
 @NgModule({

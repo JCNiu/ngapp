@@ -28,27 +28,42 @@ export const MENUES: menu[] = [
         item: [{
             index: 0,
             name: '斜切角 bevelangle',
-            url: '/cssEr-bevelangle'
+            url: '/csser-bevelangle'
         },
         {
             index: 1,
             name: '图片翻转 Flip',
-            url: '/cssEr-antflip'
+            url: '/csser-antflip'
         },
         {
             index: 2,
             name: '滚动条 Scroll',
-            url: '/cssEr-scroll'
+            url: '/csser-scroll'
         },
         {
             index: 3,
             name: '阴影 Shadow',
-            url: '/cssEr-shadow'
+            url: '/csser-shadow'
         },
         {
             index: 4,
             name: '按钮动画 animate-button',
             url: '/ant-button'
+        },
+        {
+            index: 5,
+            name: '字体 font',
+            url: '/csser-font'
+        },
+        {
+            index: 6,
+            name: '输入框 input',
+            url: '/csser-input'
+        },
+        {
+            index: 7,
+            name: '价格表 price-list',
+            url: '/price-list'
         },
         ]
     }

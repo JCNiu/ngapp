@@ -3,6 +3,7 @@
 .button {
     position: relative;
     display: inline-block;
+    margin: 10px;
     padding: 8px 20px;
     width: auto;
     color: #fff!important;
@@ -12,22 +13,61 @@
     text-decoration: none;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
     text-shadow: 0 -1px 1px rgba(0, 0, 0, .25);
-    background-color: #222;
+    background: #222 url(../../../assets/imgs/csser/overlay-button.png) repeat-x 0 0;
     border-bottom: 1px solid rgba(0, 0, 0, .25);
     border-radius: 5px;
     cursor: pointer;
     overflow: visible;
 
-    &.ant {
-        // @include animation(greenPulse 3s infinite);
-        -webkit-animation-duration: 2s;
-        -webkit-animation-iteration-count: infinite;
+    &:active {
+        @include transform(translateY(1px));
     }
 
     &.green {
         background-color: #91bd09;
-        -webkit-animation-name: greenPulse;
-        -webkit-animation-duration: 3s;
+        @include animation(greenPulse 3s infinite);
+        &:hover {
+            background-color: #749a02;
+        }
+    }
+    &.blue {
+        background-color: #2daebf;
+        @include animation(bluePulse 4s infinite);
+        &:hover {
+            background-color: #007d9a;
+        }
+    }
+    
+    &.magenta {
+        background-color: #a9014b;
+        @include animation(magentaPulse 2s infinite);
+        &:hover {
+            background-color: #630030;
+        }
+    }
+
+    &.red {
+        background-color: #e33100;
+        @include animation(redPulse 1s infinite);
+        &:hover {
+            background-color: #872300;
+        }
+    }
+
+    &.orange {
+        background-color: #ff5c00;
+        @include animation(orangePulse 3s infinite);
+        &:hover {
+            background-color: #d45500;
+        }
+    }
+
+    &.orangellow {
+        background-color: #ffb515;
+        @include animation(orangellowPulse 5s infinite);
+        &:hover {
+            background-color: #fc9200;
+        }
     }
 }
 
@@ -42,6 +82,81 @@
     }
     100% {
         background-color: #749a02;
+        box-shadow: 0 0 9px #333;
+    }
+}
+
+@keyframes bluePulse {
+    0% {
+        background-color: #007d9a;
+        box-shadow: 0 0 9px #333;
+    }
+    50% {
+        background-color: #2daebf;
+        box-shadow: 0 0 18px #2daebf;
+    }
+    100% {
+        background-color: #007d9a;
+        box-shadow: 0 0 9px #333;
+    }
+}
+
+@keyframes magentaPulse {
+    0% {
+        background-color: #630030;
+        box-shadow: 0 0 9px #333;
+    }
+    50% {
+        background-color: #a9014b;
+        box-shadow: 0 0 18px #a9014b;
+    }
+    100% {
+        background-color: #630030;
+        box-shadow: 0 0 9px #333;
+    }
+}
+
+@keyframes redPulse {
+    0% {
+        background-color: #bc330d;
+        box-shadow: 0 0 9px #333;
+    }
+    50% {
+        background-color: #e33100;
+        box-shadow: 0 0 18px #e33100;
+    }
+    100% {
+        background-color: #bc330d;
+        box-shadow: 0 0 9px #333;
+    }
+}
+
+@keyframes orangePulse {
+    0% {
+        background-color: #d45500;
+        box-shadow: 0 0 9px #333;
+    }
+    50% {
+        background-color: #ff5c00;
+        box-shadow: 0 0 18px #ff5c00;
+    }
+    100% {
+        background-color: #d45500;
+        box-shadow: 0 0 9px #333;
+    }
+}
+
+@keyframes orangellowPulse {
+    0% {
+        background-color: #fc9200;
+        box-shadow: 0 0 9px #333;
+    }
+    50% {
+        background-color: #ffb515;
+        box-shadow: 0 0 18px #ffb515;
+    }
+    100% {
+        background-color: #fc9200;
         box-shadow: 0 0 9px #333;
     }
 }

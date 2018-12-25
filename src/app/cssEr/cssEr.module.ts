@@ -8,6 +8,9 @@ import { antFlipComponent } from './ant-flip/ant-flip.component';
 import { scrollComponent } from './scroll/scroll.component';
 import { shadowComponent } from './shadow/shadow.component';
 import { antButtonComponent } from './ant-button/ant-button.component';
+import { fontComponent } from './font/font.component';
+import { inputComponent } from './input/input.component';
+import { priceListComponent } from './price-list/price-list.component';
 
 @NgModule({
     imports: [
@@ -22,14 +25,20 @@ import { antButtonComponent } from './ant-button/ant-button.component';
         antFlipComponent,
         scrollComponent,
         shadowComponent,
-        antButtonComponent
+        antButtonComponent,
+        fontComponent,
+        inputComponent,
+        priceListComponent
     ],
     declarations: [
         bevelAngleComponent,
         antFlipComponent,
         scrollComponent,
         shadowComponent,
-        antButtonComponent
+        antButtonComponent,
+        fontComponent,
+        inputComponent,
+        priceListComponent
     ],
     providers: [{ provide: NZ_I18N, useValue: zh_CN }]
 })
