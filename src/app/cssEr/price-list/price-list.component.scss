@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding-bottom: 3em;
+    padding: 3em 0;
     width: 100%;
     color: #fff;
     font-size: 16px;
@@ -96,7 +96,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding-bottom: 3em;
+    padding: 3em 0;
     width: 100%;
     color: #fff;
     font-size: 16px;
@@ -214,7 +214,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding-bottom: 3em;
+    padding: 3em 0;
     width: 100%;
     
     .pricing-item {
@@ -303,7 +303,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding-bottom: 3em;
+    padding: 3em 0;
     width: 100%;
     
     .pricing-item {
@@ -382,8 +382,7 @@
         }
         
         .pricing-action {
-            margin: 0 2em;
-            margin-top: auto;
+            margin: auto 2em 1em;
             padding: 1em 2em;
             color: inherit;
             font-weight: bold;
@@ -400,6 +399,555 @@
             &:focus {
                 color: #ef7d46;
                 background-color: #fff;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------分割线---------------------------------------*/
+
+// karma
+.pricing-karma {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3em 0;
+    width: 100%;
+    background-color: #efb7b7;
+    
+    .pricing-item {
+        flex: 0 1 330px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // 填满宽度
+        align-items: stretch;
+        margin: 1em;
+        color: #382628;
+        text-align: center;
+        // 大写字体
+        text-transform: uppercase;
+        background-color: #fff;
+        border: 2px solid #382628;
+        border-radius: 5px;
+        cursor: default;
+        @include transition(border-color .3s);
+
+        &.pricing-karma-featured {
+            .pricing-price {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: -30px;
+                    right: -20px;
+                    width: 100px;
+                    height: 100px;
+                    background: url(../../../assets/imgs/csser/stamp.png);
+                    background-size: cover;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .pricing-title {
+            margin: .5em 0 0;
+            padding: 1em;
+            font-size: 1em;
+            font-weight: 700;
+            border-bottom: 2px solid #382628;
+        }
+
+        .pricing-sentence {
+            margin: 0 0 1em 0;
+            padding: 1em;
+            font-size: .85em;
+            border-bottom: 2px solid #382628;
+        }
+        
+        .pricing-price {
+            position: relative;
+            margin: 1em;
+            padding: .5em 0 0 0;
+            font-size: 3em;
+            font-weight: bold;
+            border: 2px solid #382628;
+            z-index: 100;
+
+            .pricing-currency {
+                font-size: 0.5em;
+                // 垂直对齐文本上标
+                vertical-align: super;
+            }
+            .pricing-period {
+                display: block;
+                margin-top: 1.25em;
+                padding: 1em;
+                font-size: .25em;
+                border-top: 2px solid #382628;
+            }
+        }
+
+
+        .pricing-feature-list {
+            margin: 0;
+            padding: 0 1em 2.5em 4em;
+            list-style-type: square;
+            font-size: .85em;
+            letter-spacing: 0;
+            text-align: left;
+        }
+        
+        .pricing-action {
+            flex: none;
+            margin: auto 1em 1em;
+            padding: 1.25em 2em;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: bold;
+            border: 2px solid #382628;
+            border-radius: 5px;
+            background: none;
+            background-color: #382628;
+            cursor: pointer;
+            outline: none;
+            -webkit-appearance: button;
+            @include transition(background-color .3s, color .3s);
+
+            &:hover {
+                color: #382628;
+                background-color: #ffdbd5;
+            }
+        }
+    }
+    
+}
+
+
+/*--------------------------------分割线---------------------------------------*/
+
+// norbu
+.pricing-norbu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3em 0;
+    width: 100%;
+    @include linear-gradient(45deg, #7e67e5, #02cbdf);
+    
+    .pricing-item {
+        flex: 0 1 330px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // 填满宽度
+        align-items: stretch;
+        margin: 1em;
+        padding: 2em 2.5em;
+        color: #fff;
+        text-align: center;
+        background-color: rgba(255, 255, 255, .08);
+        border: 1px solid rgba(255, 255, 255, .4);
+        border-radius: 10px;
+        cursor: default;
+        @include transition(border-color .3s, background .3s);
+
+        &:hover {
+            border: 1px solid rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, .18);
+        }
+
+        .pricing-title {
+            position: relative;
+            margin: .5em 0;
+            padding: 1em;
+            color: #fff;
+            font-size: 2em;
+            font-weight: 400;
+            
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 40%;
+                width: 20%;
+                height: 1px;
+                background-color: #fff;
+            }
+        }
+
+        .pricing-sentence {
+            margin: 0 auto 1em;
+            padding: 1em 2em;
+            font-size: 1em;
+        }
+        
+        .pricing-price {
+            position: relative;
+            padding: .5em 0 0 0;
+            font-size: 3.5em;
+            font-weight: 400;
+            z-index: 100;
+
+            .pricing-currency {
+                font-size: 0.5em;
+                // 垂直对齐文本上标
+                vertical-align: super;
+            }
+            .pricing-period {
+                display: block;
+                padding: 1em;
+                font-size: .25em;
+            }
+        }
+
+        .pricing-feature-list {
+            margin: 0 2em;
+            padding: 2em 0;
+            list-style: none;
+            font-size: 1.15em;
+            text-align: left;
+            letter-spacing: 0;
+
+            .pricing-feature {
+                line-height: 1.4;
+                &:before {
+                    content: '\279E';
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 0 .75em 0 0;
+                }
+            }
+        }
+        
+        .pricing-action {
+            margin: auto 1em 1em;
+            padding: 1.25em 2em;
+            color: #4aa8e4;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background: none;
+            background-color: rgba(255, 255, 255, .7);
+            cursor: pointer;
+            outline: none;
+            -webkit-appearance: button;
+            @include transition(background .3s);
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------分割线---------------------------------------*/
+
+// yonten
+.pricing-yonten {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3em 0;
+    width: 100%;
+    background-color: #30353c;
+    
+    .pricing-item {
+        flex: 0 1 330px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // 填满宽度
+        align-items: stretch;
+        margin: 1em;
+        padding: 2em 4em;
+        max-width: 320px;
+        color: #fff;
+        text-align: center;
+        border: 1px solid #5c6552;
+        cursor: default;
+
+        &:hover {
+            z-index: 100;
+            &:after {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                width: 100%;
+                height: 100%;
+                box-sizing: content-box;
+                border: 5px solid #8bc34a;
+                // 鼠标事件直接穿透元素
+                pointer-events: none;
+            }
+        }
+
+        .pricing-title {
+            margin: .5em 0;
+            padding: .5em 0;
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        .pricing-price {
+            margin: 0 0 .5em 0;
+            color: #85c34a;
+            font-size: 2em;
+            font-weight: bold;
+
+            .pricing-currency {
+                font-size: 0.5em;
+                // 垂直对齐文本上标
+                vertical-align: super;
+            }
+            .pricing-period {
+                padding: 0 0 0 .5em;
+                color: #646d5b;
+                font-size: .35em;
+            }
+        }
+
+        .pricing-feature-list {
+            margin: 0;
+            padding: .25em 0 8em;
+            list-style: none;
+            color: #81867d;
+            text-align: center;
+
+            .pricing-feature {
+                padding: .25em;
+            }
+        }
+        
+        .pricing-action {
+            margin-top: auto;
+            padding: 1em 2em;
+            color: inherit;
+            font-weight: bold;
+            border: none;
+            border-radius: 40px;
+            background: none;
+            background-color: #85c34a;
+            cursor: pointer;
+            outline: none;
+            -webkit-appearance: button;
+            @include transition(background-color .3s, color .3s);
+
+            &:hover {
+                color: #85c34a;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------分割线---------------------------------------*/
+
+// tashi
+.pricing-tashi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3em 0;
+    width: 100%;
+    background-color: #383e4c;
+    
+    .pricing-item {
+        flex: 0 1 330px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // 填满宽度
+        align-items: stretch;
+        margin: .5em;
+        padding: 2em 2.5em;
+        color: #fff;
+        text-align: left;
+        background-color: #262c37;
+        cursor: default;
+
+        .pricing-title {
+            margin: 0 0 .15em;
+            color: #e25a77;
+            font-size: 2em;
+            font-weight: 300;
+        }
+
+        .pricing-sentence {
+            margin: 0;
+            padding: 0 0 .5em;
+            color: #535965;
+        }
+
+        .pricing-price {
+            padding: .85em 0;
+            font-size: 3em;
+            font-weight: 300;
+
+            .pricing-currency {
+                font-size: 0.65em;
+                // 垂直对齐文本上标
+                vertical-align: super;
+                color: #394150;
+            }
+            .pricing-period {
+                padding: 0 0 0 .5em;
+                color: #535965;
+                font-size: .35em;
+            }
+        }
+
+        .pricing-feature-list {
+            margin: 0;
+            padding: 0 0 2.5em;
+            list-style: none;
+            color: #757983;
+            font-size: .95em;
+            text-align: left;
+
+            .pricing-feature {
+                position: relative;
+                display: block;
+                padding: 0 0 0 20px;
+                line-height: 1.5;
+            }
+        }
+        
+        .pricing-action {
+            align-self: flex-end;
+            margin-top: auto;
+            width: 60px;
+            height: 60px;
+            color: #fff;
+            line-height: 60px;
+            font-size: 1.55em;
+            border: none;
+            border-radius: 30px;
+            background: none;
+            background-color: #e25a77;
+            cursor: pointer;
+            outline: none;
+            -webkit-appearance: button;
+            @include transition(background-color .3s, color .3s);
+
+            &:before {
+                content: "\279e";
+                color: #fff;
+            }
+
+            &:hover {
+                background-color: #1a1f28;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------分割线---------------------------------------*/
+
+// palden
+.pricing-palden {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3em 0;
+    width: 100%;
+    background-color: #647df9;
+    
+    .pricing-item {
+        flex: 0 1 330px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // 填满宽度
+        align-items: stretch;
+        margin: 1em -0.5em;
+        color: #84697c;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 20px 20px 10px 10px;
+        box-shadow: 0 0 10px rgba(46, 59, 125, .23);
+        cursor: default;
+
+        &.pricing-item-featured {
+            margin: 0;
+            box-shadow: 0 0 20px rgba(46, 59, 125, .23);
+            z-index: 10;
+        }
+
+        .pricing-deco {
+            position: relative;
+            padding: 4em 0 9em;
+            background-color: #7a90ff;
+            border-radius: 10px 10px 0 0;
+
+            .pricing-price {
+                margin: 0 0 .25em 0;
+                padding: 0;
+                color: #fff;
+                line-height: .75;
+                font-size: 5em;
+                font-weight: bold;
+    
+                .pricing-currency {
+                    font-size: 0.15em;
+                    // 垂直对齐文本上标
+                    vertical-align: top;
+                    color: rgba(0, 0, 0, .4);
+                }
+                .pricing-period {
+                    padding: 0 0 0 .5em;
+                    color: rgba(0, 0, 0, .4);
+                    font-size: .15em;
+                    font-style: italic;
+                }
+            }
+
+            
+            .pricing-title {
+                margin: 0;
+                color: #ffd5bd;
+                font-size: .75em;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+            }
+
+        }
+
+        .pricing-feature-list {
+            margin: 0;
+            padding: 0.25em 0 2.5em;
+            list-style: none;
+            text-align: center;
+
+            .pricing-feature {
+                padding: 1em 0;
+            }
+        }
+        
+        .pricing-action {
+            margin: auto 3em 2em 3em;
+            padding: 1em 2em;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            background: none;
+            background-color: #ffae7e;
+            cursor: pointer;
+            outline: none;
+            -webkit-appearance: button;
+            @include transition(background-color .3s);
+
+            &:hover {
+                background-color: #f38747;
             }
         }
     }

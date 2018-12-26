@@ -1,0 +1,100 @@
+@import '../csser';
+@import '../animate';
+
+// demo1
+.demo1-ant-contorl {
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    padding: 20px 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    .ant-contorl-label {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        padding: 0 10px;
+        height: 20px;
+        line-height: 20px;
+        background-color: #fff;
+    }
+}
+.demo-1 {
+    position: relative;
+    margin: 20px auto;
+    width: calc(100% - 20px);
+    min-height: 400px;
+    background-color : #1e1e1e; 
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        display: block;
+        padding: 10px 15px;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        color: #ffe;
+        text-decoration: none;
+        // 每个单词以大写开头
+        text-transform: capitalize;
+        @include transition(background-color .5s ease-in-out);
+    }
+
+    .nav {
+        margin: 40px auto;
+        height: 40px;
+        text-align: center;
+        background-color: rgba(23, 23, 50, .7);
+        border-radius: 4px;
+        .main {
+            display: flex;
+            justify-content: center;
+            
+            li {
+                min-width: 88px;
+                // 旋转元素的基点位置
+                transform-origin: top center;
+                a {
+                    background-color: rgba(23, 23, 50, .07);
+                    &:hover {
+                        background-color: #631818;
+                    }
+                }
+            }
+
+            & > li {
+                position: relative;
+                margin: 0 5px;
+                a {
+                    box-sizing: border-box;
+                    height: 40px;
+                }
+            }
+
+            .menu {
+                .drop-menu {
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    width: 100%;
+                }
+                li {
+                    display: none;
+                    @include animation(fadeIn 1s both);
+                }
+                &:hover {
+                    li {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

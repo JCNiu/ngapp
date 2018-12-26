@@ -1,0 +1,1055 @@
+/* Attention(晃动效果) */
+@include keyframes(bounce) {
+    0%, 20%, 53%, 80%, 100% {
+        @include transform(translateZ(0));
+    }
+    40%, 43% {
+        @include transform(translate3d(0, -30px, 0));
+    }
+    40%, 43%, 70% {
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+    }
+    70% {
+        @include transform(translate3d(0, -15px, 0));
+    }
+    90% {
+        @include transform(translate3d(0, -4px, 0));
+    }
+}
+@include keyframes(flash) {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+@include keyframes(pulse) {
+    0% {
+        @include transform(scaleX(1));
+    }
+    50% {
+        @include transform(scale3d(1.05, 1.05, 1.05));
+    }
+    100% {
+        @include transform(scaleX(1));
+    }
+}
+@include keyframes(rubberBand) {
+    0% {
+        @include transform(scaleX(1));
+    }
+    30% {
+        @include transform(scale3d(1.25, .75, 1));
+    }
+    40% {
+        @include transform(scale3d(.75, 1.25, 1));
+    }
+    50% {
+        @include transform(scale3d(1.15, .85, 1));
+    }
+    65% {
+        @include transform(scale3d(.95, 1.05, 1));
+    }
+    75% {
+        @include transform(scale3d(1.05, .95, 1));
+    }
+    100% {
+        @include transform(scaleX(1));
+    }
+}
+@include keyframes(shake) {
+    0% {
+        @include transform(translateZ(0));
+    }
+    10%, 30%, 50%, 70%, 90% {
+        @include transform(translate3d(-10px, 0, 0));
+    }
+    20%, 40%, 60%, 80% {
+        @include transform(translate3d(10px, 0, 0));
+    }
+}
+@include keyframes(headShake) {
+    0% {
+        @include transform(translateX(0));
+    }
+    6.5% {
+        @include transform(translateX(-6px) rotateY(-9deg));
+    }
+    18.5% {
+        @include transform(translateX(5px) rotateY(7deg));
+    }
+    31.5% {
+        @include transform(translateX(-3px) rotateY(-5deg));
+    }
+    43.5% {
+        @include transform(translateX(2px) rotateY(3deg));
+    }
+    50% {
+        @include transform(translateX(0));
+    }
+}
+@include keyframes(swing) {
+    20% {
+        @include transform(rotate(15deg));
+    }
+    40% {
+        @include transform(rotate(-10deg));
+    }
+    60% {
+        @include transform(rotate(5deg));
+    }
+    80% {
+        @include transform(rotate(-5deg));
+    }
+    100% {
+        @include transform(rotate(0deg));
+    }
+}
+@include keyframes(tada) {
+    20% {
+        @include transform(scaleX(1));
+    }
+    10%, 20% {
+        @include transform(scale3d(.9, .9, .9) rotate(-3deg));
+    }
+    30%, 50%, 70%, 90% {
+        @include transform(scale3d(1.1, 1.1, 1.1) rotate(3deg));
+    }
+    40%, 60%, 80% {
+        @include transform(scale3d(1.1, 1.1, 1.1) rotate(-3deg));
+    }
+    100% {
+        @include transform(scaleX(1));
+    }
+}
+@include keyframes(wobble) {
+    0% {
+        @include transform(none);
+    }
+    15% {
+        @include transform(translate3d(-25%,0,0) rotate(-5deg));
+    }
+    30% {
+        @include transform(translate3d(20%,0,0) rotate(3deg));
+    }
+    45% {
+        @include transform(translate3d(-15%,0,0) rotate(-3deg));
+    }
+    60% {
+        @include transform(translate3d(10%,0,0) rotate(2deg));
+    }
+    75% {
+        @include transform(translate3d(-5%,0,0) rotate(-1deg));
+    }
+    100% {
+        @include transform(none);
+    }
+}
+@include keyframes(jello) {
+    0%, 11.1%, 100% {
+        @include transform(none);
+    }
+    22.2% {
+        @include transform(skewX(-12.5deg) skewY(-12.5deg));
+    }
+    33.3% {
+        @include transform(skewX(6.25deg) skewY(6.25deg));
+    }
+    44.4% {
+        @include transform(skewX(-3.125deg) skewY(-3.125deg));
+    }
+    55.5% {
+        @include transform(skewX(1.5625deg) skewY(1.5625deg));
+    }
+    66.6% {
+        @include transform(skewX(-.78125deg) skewY(-.78125deg));
+    }
+    77.7% {
+        @include transform(skewX(.390625deg) skewY(.390625deg));
+    }
+    88.8% {
+        @include transform(skewX(-.1953125deg) skewY(-.1953125deg));
+    }
+}
+
+
+/* ------------------------------------------分割线------------------------------------------------- */
+/* bounce 弹性缓冲效果 */ 
+/* 进场动画 */
+@include keyframes(bounceIn) {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    }
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.3,.3,.3));
+    }
+    20% {
+        @include transform(scale3d(1.1,1.1,1.1));
+    }
+    40% {
+        @include transform(scale3d(.9,.9,.9));
+    }
+    60% {
+        opacity: 1;
+        @include transform(scale3d(1.03,1.03,1.03));
+    }
+    80% {
+        opacity: 1;
+        @include transform(scale3d(.97,.97,.97));
+    }
+    100% {
+        opacity: 1;
+        @include transform(scaleX(1));
+    }
+}
+@include keyframes(bounceInDown) {
+    0%, 60%, 75%, 90%, 100% {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    }
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0,-3000px,0));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translate3d(0,25px,0));
+    }
+    75% {
+        @include transform(translate3d(0,-10px,0));
+    }
+    90% {
+        @include transform(translate3d(0,5px,0));
+    }
+    100% {
+        @include transform(none);
+    }
+}
+@include keyframes(bounceInLeft) {
+    0%, 60%, 75%, 90%, 100% {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    }
+    0% {
+        opacity: 0;
+        @include transform(translate3d(-3000px,0,0));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translate3d(25px,0,0));
+    }
+    75% {
+        @include transform(translate3d(-10px,0,0));
+    }
+    90% {
+        @include transform(translate3d(5px,0,0));
+    }
+    100% {
+        @include transform(none);
+    }
+}
+@include keyframes(bounceInRight) {
+    0%, 60%, 75%, 90%, 100% {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    }
+    0% {
+        opacity: 0;
+        @include transform(translate3d(3000px,0,0));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translate3d(-25px,0,0));
+    }
+    75% {
+        @include transform(translate3d(10px,0,0));
+    }
+    90% {
+        @include transform(translate3d(-5px,0,0));
+    }
+    100% {
+        @include transform(none);
+    }
+}
+@include keyframes(bounceInUp) {
+    0%, 60%, 75%, 90%, 100% {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    }
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0,3000px,0));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translate3d(0,-20px,0));
+    }
+    75% {
+        @include transform(translate3d(0,10px,0));
+    }
+    90% {
+        @include transform(translate3d(0,-5px,0));
+    }
+    100% {
+        @include transform(translateZ(0));
+    }
+}
+
+/* 退场动画 */
+@include keyframes(bounceOut) {
+    20% {
+        @include transform(scale3d(.9,.9,.9));
+    }
+    50%, 55% {
+        opacity: 1;
+        @include transform(scale3d(1.1,1.1,1.1));
+    }
+    100% {
+        opacity: 0;
+        @include transform(scale3d(.3,.3,.3));
+    }
+}
+@include keyframes(bounceOutDown) {
+    20% {
+        @include transform(translate3d(0,10px,0));
+    }
+    50%, 55% {
+        opacity: 1;
+        @include transform(translate3d(0,-20px,0));
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0,2000px,0));
+    }
+}
+@include keyframes(bounceOutLeft) {
+    20% {
+        opacity: 1;
+        @include transform(translate3d(20px,0,0));
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(-2000px,0,0));
+    }
+}
+@include keyframes(bounceOutRight) {
+    20% {
+        opacity: 1;
+        @include transform(translate3d(-20px,0,0));
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(2000px,0,0));
+    }
+}
+@include keyframes(bounceOutUp) {
+    20% {
+        @include transform(translate3d(0,-10px,0));
+    }
+    40%, 45% {
+        opacity: 1;
+        @include transform(translate3d(0,20px,0));
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0,-2000px,0));
+    }
+}
+
+
+
+
+
+/* ------------------------------------------分割线------------------------------------------------- */
+/* fade 透明度变化效果 */ 
+/* 进场动画 */
+@include keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@include keyframes(fadeInDown) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, -100%, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(fadeInDownBig) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, -2000px, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(fadeInLeft) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(-100%, 0, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(fadeInLeftBig) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(-2000px, 0, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(fadeInRight) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(100%, 0, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(fadeInRightBig) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(2000px, 0, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(fadeInUp) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, 100%, 0));
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@include keyframes(fadeInUpBig) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, 2000px, 0));
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* 退场动画 */
+@include keyframes(fadeOut) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@include keyframes(fadeOutDown) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0, 100%, 0));
+    }
+}
+@include keyframes(fadeOutDownBig) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0, 2000px, 0));
+    }
+}
+@include keyframes(fadeOutLeft) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(-100%, 0, 0));
+    }
+}
+@include keyframes(fadeOutLeftBig) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(-2000px, 0, 0));
+    }
+}
+@include keyframes(fadeOutRight) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(100%, 0, 0));
+    }
+}
+@include keyframes(fadeOutRightBig) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(2000px, 0, 0));
+    }
+}
+@include keyframes(fadeOutUp) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0, -100%, 0));
+    }
+}
+
+@include keyframes(fadeOutUpBig) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0, -2000px, 0));
+    }
+}
+
+
+
+
+/* ------------------------------------------分割线------------------------------------------------- */
+/* flip 翻转效果 */ 
+/* 进场动画 */
+@include keyframes(flip) {
+    0% {
+        @include transform(perspective(400px) rotateY(-1turn));
+    }
+    0%, 40% {
+        animation-timing-function: ease-out;
+    }
+    40% {
+        @include transform(perspective(400px) translateZ(150px) rotateY(-190deg));
+    }
+    50% {
+        @include transform(perspective(400px) translateZ(150px) rotateY(-170deg));
+    }
+    50%, 80% {
+        animation-timing-function: ease-in;
+    }
+    80% {
+        @include transform(perspective(400px) scale3d(.95,.95,.95));
+    }
+    100% {
+        @include transform(perspective(400px));
+        animation-timing-function: ease-in;
+    }
+}
+@include keyframes(flipInX) {
+    0% {
+        opacity: 0;
+        @include transform(perspective(400px) rotateX(90deg));
+    }
+    0%, 40% {
+        animation-timing-function: ease-out;
+    }
+    40% {
+        @include transform(perspective(400px) rotateX(-20deg));
+    }
+    60% {
+        opacity: 1;
+        @include transform(perspective(400px) rotateX(10deg));
+    }
+    80% {
+        @include transform(perspective(400px) rotateX(-5deg));
+    }
+    100% {
+        @include transform(perspective(400px));
+    }
+}
+@include keyframes(flipInY) {
+    0% {
+        opacity: 0;
+        @include transform(perspective(400px) rotateY(90deg));
+    }
+    0%, 40% {
+        animation-timing-function: ease-in;
+    }
+    40% {
+        @include transform(perspective(400px) rotateY(-20deg));
+    }
+    60% {
+        opacity: 1;
+        @include transform(perspective(400px) rotateY(10deg));
+    }
+    80% {
+        @include transform(perspective(400px) rotateY(-5deg));
+    }
+    100% {
+        @include transform(perspective(400px));
+    }
+}
+
+/* 退场动画 */ 
+@include keyframes(flipOutX) {
+    0% {
+        @include transform(perspective(400px));
+    }
+    30% {
+        opacity: 1;
+        @include transform(perspective(400px) rotateX(-20deg));
+    }
+    100% {
+        opacity: 0;
+        @include transform(perspective(400px) rotateX(90deg));
+    }
+} 
+@include keyframes(flipOutY) {
+    0% {
+        @include transform(perspective(400px));
+    }
+    30% {
+        opacity: 1;
+        @include transform(perspective(400px) rotateY(-15deg));
+    }
+    100% {
+        opacity: 0;
+        @include transform(perspective(400px) rotateY(90deg));
+    }
+}
+
+
+
+/* ------------------------------------------分割线------------------------------------------------- */
+/* rotate 旋转效果 */ 
+/* 进场动画 */
+@include keyframes(rotateIn) {
+    0% {
+        opacity: 0;
+        @include transform(rotate(-200deg));
+    }
+    0%, 100% {
+        transform-origin: center;
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(rotateInDownLeft) {
+    0% {
+        opacity: 0;
+        @include transform(rotate(-45deg));
+    }
+    0%, 100% {
+        transform-origin: left bottom;
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(rotateInDownRight) {
+    0% {
+        opacity: 0;
+        @include transform(rotate(45deg));
+    }
+    0%, 100% {
+        transform-origin: right bottom;
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(rotateInUpLeft) {
+    0% {
+        opacity: 0;
+        @include transform(rotate(45deg));
+    }
+    0%, 100% {
+        transform-origin: left bottom;
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(rotateInUpRight) {
+    0% {
+        opacity: 0;
+        @include transform(rotate(-90deg));
+    }
+    0%, 100% {
+        transform-origin: right bottom;
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+/* 退场动画 */ 
+@include keyframes(rotateOut) {
+    0% {
+        opacity: 1;
+    }
+    0%, 100% {
+        transform-origin: center;
+    }
+    100% {
+        opacity: 0;
+        @include transform(rotate(200deg));
+    }
+}
+@include keyframes(rotateOutDownLeft) {
+    0% {
+        opacity: 1;
+    }
+    0%, 100% {
+        transform-origin: left bottom;
+    }
+    100% {
+        opacity: 0;
+        @include transform(rotate(45deg));
+    }
+}
+@include keyframes(rotateOutDownRight) {
+    0% {
+        opacity: 1;
+    }
+    0%, 100% {
+        transform-origin: right bottom;
+    }
+    100% {
+        opacity: 0;
+        @include transform(rotate(-45deg));
+    }
+}
+@include keyframes(rotateOutUpLeft) {
+    0% {
+        opacity: 1;
+    }
+    0%, 100% {
+        transform-origin: left bottom;
+    }
+    100% {
+        opacity: 0;
+        @include transform(rotate(-45deg));
+    }
+}
+@include keyframes(rotateOutUpRight) {
+    0% {
+        opacity: 1;
+    }
+    0%, 100% {
+        transform-origin: right bottom;
+    }
+    100% {
+        opacity: 0;
+        @include transform(rotate(90deg));
+    }
+}
+
+
+
+/* ------------------------------------------分割线------------------------------------------------- */
+/* slide 滑动效果 */ 
+/* 进场动画 */
+@include keyframes(slideInDown) {
+    0% {
+        visibility: visible;
+        @include transform(translate3d(0,-100%,0));
+    }
+    100% {
+        @include transform(translateZ(0));
+    }
+}
+@include keyframes(slideInLeft) {
+    0% {
+        visibility: visible;
+        @include transform(translate3d(-100%,0,0));
+    }
+    100% {
+        @include transform(translateZ(0));
+    }
+}
+@include keyframes(slideInRight) {
+    0% {
+        visibility: visible;
+        @include transform(translate3d(100%,0,0));
+    }
+    100% {
+        @include transform(translateZ(0));
+    }
+}
+@include keyframes(slideInUp) {
+    0% {
+        visibility: visible;
+        @include transform(translate3d(0,100%,0));
+    }
+    100% {
+        @include transform(translateZ(0));
+    }
+}
+
+/* 退场动画 */
+@include keyframes(slideOutDown) {
+    0% {
+        @include transform(translateZ(0));
+    }
+    100% {
+        visibility: hidden;
+        @include transform(translate3d(0,100%,0));
+    }
+}
+@include keyframes(slideOutLeft) {
+    0% {
+        @include transform(translateZ(0));
+    }
+    100% {
+        visibility: hidden;
+        @include transform(translate3d(-100%,0,0));
+    }
+}
+@include keyframes(slideOutRight) {
+    0% {
+        @include transform(translateZ(0));
+    }
+    100% {
+        visibility: hidden;
+        @include transform(translate3d(100%,0,0));
+    }
+}
+@include keyframes(slideOutUp) {
+    0% {
+        @include transform(translateZ(0));
+    }
+    100% {
+        visibility: hidden;
+        @include transform(translate3d(0,-100%,0));
+    }
+}
+
+
+
+/* ------------------------------------------分割线------------------------------------------------- */
+/* zoom 变焦效果 */ 
+/* 进场动画 */
+@include keyframes(zoomIn) {
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.3,.3,.3));
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@include keyframes(zoomInDown) {
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.1,.1,.1) translate3d(0,-1000px,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    60% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(0,60px,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+    }
+}
+@include keyframes(zoomInLeft) {
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.1,.1,.1) translate3d(-1000px,0,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    60% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(10px,0,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+    }
+}
+@include keyframes(zoomInRight) {
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.1,.1,.1) translate3d(1000px,0,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    60% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(-10px,0,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+    }
+}
+@include keyframes(zoomInUp) {
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.1,.1,.1) translate3d(0,1000px,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    60% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(0,-60px,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+    }
+}
+
+/* 退场动画 */
+@include keyframes(zoomOut) {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        @include transform(scale3d(.3,.3,.3));
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+@include keyframes(zoomOutDown) {
+    40% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(0,-60px,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    100% {
+        opacity: 0;
+        @include transform(scale3d(.1,.1,.1) translate3d(0,2000px,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+    }
+}
+@include keyframes(zoomOutLeft) {
+    40% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(42px,0,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    100% {
+        opacity: 0;
+        @include transform(scale(.1) translate3d(-2000px,0,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+        transform-origin: left center;
+    }
+}
+@include keyframes(zoomOutRight) {
+    40% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(-42px,0,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    100% {
+        opacity: 0;
+        @include transform(scale(.1) translate3d(2000px,0,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+        transform-origin: right center;
+    }
+}
+@include keyframes(zoomOutUp) {
+    40% {
+        opacity: 1;
+        @include transform(scale3d(.475,.475,.475) translate3d(0,60px,0));
+        animation-timing-function: cubic-bezier(.55,.055,.675,.19);
+    }
+    100% {
+        opacity: 0;
+        @include transform(scale3d(.1,.1,.1) translate3d(0,-2000px,0));
+        animation-timing-function: cubic-bezier(.175,.885,.32,1);
+    }
+}
+
+
+
+/* ------------------------------------------分割线------------------------------------------------- */
+/* special 特殊效果 */ 
+
+@include keyframes(hinge) {
+    0% {
+        transform-origin: top left;
+        @include transform(scale3d(.3,.3,.3));
+    }
+    0%, 20%, 60% {
+        animation-timing-function: ease-in-out;
+    }
+    20%, 60% {
+        transform-origin: top left;
+        @include transform(rotate(80deg));
+    }
+    40%, 80% {
+        opacity: 1;
+        transform-origin: top left;
+        animation-timing-function: ease-in-out;
+        @include transform(rotate(60deg));
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0,700px,0));
+    }
+}
+/* 进场动画 */
+@include keyframes(rollIn) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(-100%,0,0) rotate(-120deg));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@include keyframes(lightSpeedIn) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(100%,0,0) skewX(-30deg));
+    }
+    60% {
+        @include transform(skewX(20deg));
+    }
+    60%, 80% {
+        opacity: 1;
+    }
+    80% {
+        @include transform(skewX(-5deg));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+/* 退场动画 */
+@include keyframes(rollOut) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(100%,0,0) rotate(120deg));
+    }
+}
+@include keyframes(lightSpeedOut) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(100%,0,0) skewX(30deg));
+    }
+}

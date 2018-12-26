@@ -48,7 +48,7 @@ export const MENUES: menu[] = [
         {
             index: 4,
             name: '按钮动画 animate-button',
-            url: '/ant-button'
+            url: '/csser-ant-button'
         },
         {
             index: 5,
@@ -63,7 +63,12 @@ export const MENUES: menu[] = [
         {
             index: 7,
             name: '价格表 price-list',
-            url: '/price-list'
+            url: '/csser-price-list'
+        },
+        {
+            index: 8,
+            name: '导航 navigation',
+            url: '/csser-navigation'
         },
         ]
     }

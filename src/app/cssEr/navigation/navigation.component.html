@@ -1,0 +1,29 @@
+<div class="c-container">
+    <div class="c-content">
+
+        <h2>导航菜单</h2>
+        <div class="demo-wrap">
+            <p class="demo-label">纯css3简易下拉导航带单</p>
+            <div class="demo1-ant-contorl">
+                <p class="ant-contorl-label">进场动画控制</p>
+                <nz-radio-group [(ngModel)]="demo1AntValue">
+                    <label *ngFor="let antItem of antInValue" nz-radio nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+                <!-- <p>{{demo1AntValue}}</p> -->
+            </div>
+            <div class="demo demo-1">
+                <div class="nav">
+                    <ul class="main">
+                        <li *ngFor="let list of demo1Mock" class="menu">
+                            <a href="javascript: void(0)">{{list}}</a>
+                            <ul class="drop-menu">
+                                <li *ngFor="let item of demo1Mock" [style.animation-name]="demo1AntValue"><a href="javescript: void(0)">{{item}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

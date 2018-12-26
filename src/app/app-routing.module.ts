@@ -12,9 +12,10 @@ import { antButtonComponent } from './cssEr/ant-button/ant-button.component';
 import { fontComponent } from './cssEr/font/font.component';
 import { inputComponent } from './cssEr/input/input.component';
 import { priceListComponent } from './cssEr/price-list/price-list.component';
+import { navigationComponent } from './cssEr/navigation/navigation.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/cssEr-bevelangle', pathMatch: 'full' },
+    { path: '', redirectTo: '/csser-bevelangle', pathMatch: 'full' },
     { path: 'c-listview', component: cListComponent },
     { path: 'c-tableview', component: cTableComponent },
 
@@ -22,10 +23,11 @@ const routes: Routes = [
     { path: 'csser-antflip', component: antFlipComponent },
     { path: 'csser-scroll', component: scrollComponent },
     { path: 'csser-shadow', component: shadowComponent },
-    { path: 'ant-button', component: antButtonComponent },
+    { path: 'csser-ant-button', component: antButtonComponent },
     { path: 'csser-font', component: fontComponent },
     { path: 'csser-input', component: inputComponent },
-    { path: 'price-list', component: priceListComponent }
+    { path: 'csser-price-list', component: priceListComponent },
+    { path: 'csser-navigation', component: navigationComponent }
 ]
 
 @NgModule({

@@ -86,3 +86,16 @@
     background: -ms-linear-gradient($value);
     background: linear-gradient($value);
 }
+
+/* 动画兼容 */ 
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}

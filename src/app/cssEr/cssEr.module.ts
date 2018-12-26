@@ -11,6 +11,7 @@ import { antButtonComponent } from './ant-button/ant-button.component';
 import { fontComponent } from './font/font.component';
 import { inputComponent } from './input/input.component';
 import { priceListComponent } from './price-list/price-list.component';
+import { navigationComponent } from './navigation/navigation.component';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { priceListComponent } from './price-list/price-list.component';
         antButtonComponent,
         fontComponent,
         inputComponent,
-        priceListComponent
+        priceListComponent,
+        navigationComponent
     ],
     declarations: [
         bevelAngleComponent,
@@ -38,7 +40,8 @@ import { priceListComponent } from './price-list/price-list.component';
         antButtonComponent,
         fontComponent,
         inputComponent,
-        priceListComponent
+        priceListComponent,
+        navigationComponent
     ],
     providers: [{ provide: NZ_I18N, useValue: zh_CN }]
 })
