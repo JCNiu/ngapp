@@ -19,6 +19,5 @@ export class MenuComponent implements OnInit {
 
     log() {
         console.log(1111);
-        
     }
 }

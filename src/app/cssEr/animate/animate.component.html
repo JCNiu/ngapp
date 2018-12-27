@@ -1,0 +1,57 @@
+<div class="c-container">
+    <div class="c-content">
+
+        <h2>动画 animate</h2>
+        <div class="demo-wrap">
+            <p class="demo-label">animation 系列①</p>
+            <div class="demo1-ant-contorl">
+                <p class="ant-contorl-label">动画控制</p>
+                <p>Attention(晃动效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of attentionAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+
+                <p>bounce(弹性缓冲效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of bounceAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+
+                <p>fade(透明度变化效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of fadeAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+
+                <p>flip(翻转效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of flipAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+
+                <p>rotate(旋转效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of rotateAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+
+                <p>slide(滑动效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of slideAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+                
+                <p>zoom(变焦效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of zoomAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+
+                <p>special(特殊效果)</p>
+                <nz-radio-group [(ngModel)]="antValue" [nzSize]="'small'">
+                    <label *ngFor="let antItem of specialAnt" nz-radio-button nzValue={{antItem}}>{{antItem}}</label>
+                </nz-radio-group>
+            </div>
+            <div class="demo demo1">
+                <div class="antbox" [style.animation-name]="antValue">
+                    <p>{{antValue}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

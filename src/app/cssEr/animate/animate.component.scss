@@ -1,0 +1,51 @@
+@import '../csser';
+@import '../animate';
+
+.demo1-ant-contorl {
+    position: relative;
+    // display: flex;
+    margin-top: 20px;
+    padding: 20px 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    .ant-contorl-label {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        padding: 0 10px;
+        height: 20px;
+        line-height: 20px;
+        background-color: #fff;
+    }
+    & > p {
+        margin: 0.2em 0 0;
+        font-weight: 700;
+    }
+}
+.demo1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: calc(100% - 20px);
+    min-height: 300px;
+    background-color : #1e1e1e; 
+    
+    .antbox {
+        width: 200px;
+        height: 50px;
+        background-color: #28e;
+        // @include animation(fadeIn 1s both);
+        @include animation(1s both);
+
+        p {
+            color: #fff;
+            line-height: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
