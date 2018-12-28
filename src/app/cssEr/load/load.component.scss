@@ -1,0 +1,168 @@
+@import '../csser';
+
+// demo1 
+.demo1 {
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    width: calc(100% - 10px);
+    background-color: #f3f3f4;
+    border-radius: 4px;
+    .demo1-row {
+        display: flex;
+        justify-content: space-between;
+        
+        .demo1-row-item {
+            width: 21%;
+            background-color: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            
+            .demo1-item-title {
+                padding-left: 15px;
+                box-sizing: border-box;
+                line-height: 48px;
+                font-size: 14px;
+                border-top: 4px solid #e7eaec;
+                border-bottom: 1px solid #e7eaec;
+            }
+            .demo1-item-content {
+                padding: 15px 20px 20px;
+                   
+                .spiner-example {
+                    display: flex;
+                    align-items: center;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+// 加载动画
+.sk-spinner-rotating-plane {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    background-color: #1ab394;
+    @include animation(sk-rotatePlane 1.2s infinite ease-in-out);
+}
+.sk-spinner-double-bounce {
+    position: relative;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1ab394;
+        border-radius: 50%;
+        opacity: .6;
+        @include animation(sk-doubleBounce 2s infinite ease-in-out);
+    }
+    &:after {
+        @include animation-delay(-1s);
+    }
+}
+.sk-spinner-wave {
+    margin: 0 auto;
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    text-align: center;
+    
+    div {
+        margin: 0 1px;
+        display: inline-block;
+        width: 6px;
+        height: 100%;
+        background-color: #1ab394;
+        @include animation(sk-waveStretchDelay 1.2s infinite ease-in-out);
+        
+        &:nth-child(2) {
+            @include animation-delay(-1.1s);
+        }
+        &:nth-child(3) {
+            @include animation-delay(-1s);
+        }
+        &:nth-child(4) {
+            @include animation-delay(-0.9s);
+        }
+        &:nth-child(5) {
+            @include animation-delay(-0.8s);
+        }
+    }
+}
+.sk-spinner-wandering-cubes {
+    position: relative;
+    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #1ab394;
+        @include animation(sk-wanderingCubeMove 1.8s infinite ease-in-out);
+    }
+    &:after {
+        @include animation-delay(-0.9s);
+    }
+}
+
+@include keyframes(sk-rotatePlane) {
+    0% {
+        @include transform(perspective(120px) rotateX(0) rotateY(0));
+    }
+    50% {
+        @include transform(perspective(120px) rotateX(-180.1deg) rotateY(0));
+    }
+    100% {
+        @include transform(perspective(120px) rotateX(-180deg) rotateY(-179.9deg));
+    }
+}
+@include keyframes(sk-doubleBounce) {
+    0%, 100%{
+        @include transform(scale(0));
+    }
+    50% {
+        @include transform(scale(1));
+    }
+}
+@include keyframes(sk-waveStretchDelay) {
+    0%, 40%, 100% {
+        @include transform(scaleY(0.4));
+    }
+    20% {
+        @include transform(scaleY(1));
+    }
+}
+@include keyframes(sk-wanderingCubeMove) {
+    25% {
+        @include transform(translateX(42px) rotate(-90deg) scale(0.5));
+    }
+    50% {
+        @include transform(translateX(42px) translateY(42px) rotate(-179deg));
+    }
+    51% {
+        @include transform(translateX(42px) translateY(42px) rotate(-180deg));
+    }
+    75% {
+        @include transform(translateX(0px) translateY(42px) rotate(-270deg) scale(.5));
+    }
+    100% {
+        @include transform(rotate(-360deg));
+    }
+}
+
+/*--------------------------------------------------------分割线-------------------------------------------------------------------------*/

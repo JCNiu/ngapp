@@ -13,7 +13,8 @@ let csser: string = 'csser-';
         { path: csser + 'input', loadChildren: './input/input.module#inputModule' },
         { path: csser + 'price-list', loadChildren: './price-list/price-list.module#priceListModule' },
         { path: csser + 'navigation', loadChildren: './navigation/navigation.module#navigationModule' },
-        { path: csser + 'animate', loadChildren: './animate/animate.module#animateModule' }
+        { path: csser + 'animate', loadChildren: './animate/animate.module#animateModule' },
+        { path: csser + 'load', loadChildren: './load/load.module#loadModule' }
     ]) ],
     exports: [ RouterModule ]
 })

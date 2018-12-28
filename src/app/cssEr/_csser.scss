@@ -77,6 +77,10 @@
     animation: $value;
     -webkit-animation: $value; /* Safari 和 Chrome */
 }
+@mixin animation-delay($value) {
+    animation-delay: $value;
+    -webkit-animation-delay: $value; /* Safari 和 Chrome */
+}
 
 // 线性渐变
 @mixin linear-gradient($value...){

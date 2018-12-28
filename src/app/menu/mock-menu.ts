@@ -76,6 +76,11 @@ export const MENUES: menu[] = [
             index: 9,
             name: '动画 animate',
             url: csser + 'animate'
+        },
+        {
+            index: 10,
+            name: '加载 load',
+            url: csser + 'load'
         }
         ]
     }
