@@ -6,6 +6,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/sands/c-listview', pathMatch: 'full' },
     { path: 'sands', loadChildren: './sAndS/sands.routing.module#sAndSRoutingModule'},
     { path: 'csser', loadChildren: './cssEr/csser.routing.module#csserRoutingModule'},
+    { path: 'nzstyle', loadChildren: './nzStyle/nzstyle.routing.module#nzStyleRoutingModule'},
     
     // { path: '**', component: cListComponent}
 ]

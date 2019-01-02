@@ -1,0 +1,51 @@
+// 兼容前缀预处理
+// 转换
+@mixin transform($value...) {
+    transform: $value;
+    -ms-transform: $value;		/* IE 9 */
+    -webkit-transform: $value;	/* Safari and Chrome */
+    -o-transform: $value;		/* Opera */
+    -moz-transform: $value;		/* Firefox */
+}
+// 过渡
+@mixin transition($value...) {
+    transition: $value;
+    -moz-transition: $value;	/* Firefox 4 */
+    -webkit-transition: $value;	/* Safari 和 Chrome */
+    -o-transition: $value;	/* Opera */
+}
+// 动画
+@mixin animation($value...) {
+    animation: $value;
+    -webkit-animation: $value; /* Safari 和 Chrome */
+}
+@mixin animation-delay($value) {
+    animation-delay: $value;
+    -webkit-animation-delay: $value; /* Safari 和 Chrome */
+}
+@mixin animation-fill-mode($value) {
+    animation-fill-mode: $value;
+    -webkit-animation-fill-mode: $value; /* Safari 和 Chrome */
+}
+
+// 线性渐变
+@mixin linear-gradient($value...){
+    background: -webkit-linear-gradient($value);
+    background: -moz-linear-gradient($value);
+    background: -o-linear-gradient($value);
+    background: -ms-linear-gradient($value);
+    background: linear-gradient($value);
+}
+
+/* 动画兼容 */ 
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}

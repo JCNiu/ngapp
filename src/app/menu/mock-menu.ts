@@ -1,7 +1,8 @@
 // 左侧menu 数据
 import { menu } from './menu';
 
-let sands: string = 'sands/c-'
+let sands: string = 'sands/c-';
+let nz: string = 'nzstyle/nz-';
 let csser: string = 'csser/csser-';
 export const MENUES: menu[] = [
     {
@@ -22,7 +23,11 @@ export const MENUES: menu[] = [
     {
         index: 1, 
         name: 'nz 样式', 
-        url: '/list', 
+        item: [{
+            index: 0,
+            name: '对话框 modal',
+            url: nz + 'modal'
+        }]
     },
     {
         index: 2, 

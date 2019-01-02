@@ -1,0 +1,38 @@
+<div class="c-container">
+    <div class="c-content">
+
+        <h2>对话框 modal</h2>
+        <div class="demo-wrap">
+            <p class="demo-label">UI风格</p>
+            <div class="demo demo-1">
+                <div class="demo-row">
+                    <a nz-button [nzType]="'primary'" href="https://ng.ant.design/components/modal/zh" target="_blank">nz-zerro 对话框modal</a>
+                    <a nz-button [nzType]="'primary'" href="https://www.layui.com/demo/layer.html" target="_blank">layui 弹出层</a>
+                </div>
+                <div class="demo-row">
+                    <button nz-button [nzType]="'primary'" (click)="showModal()"><span>默认</span></button>
+                    <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+                        <p>Content one</p>
+                        <p>Content two</p>
+                        <p>Content three</p>
+                    </nz-modal>
+                    <button class="layui-btn-normal" (click)="showLayuiModal()"><span>Layui</span></button>
+                    <nz-modal class="layui-nz-modal" [(nzVisible)]="isLayuiVisible" nzTitle="名言" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+                        <div>
+                            一个人最怕不老实，青年人最可贵的是老实作风。"老实"就是不自欺欺人，做到不欺骗人家容易，不欺骗自己最难。
+                            "老实作风"就是脚踏实地，不占便宜。世界上没有便宜的事，谁想占便宜水就会吃亏。 —— 徐特立
+                        </div>
+                    </nz-modal>
+                </div>
+                <div class="demo-row">
+                    <button nz-button nzType="info" (click)="showInfo()">确认框模式Info</button>
+                    <button nz-button nzType="info" (click)="showSuccess()">确认框模式success</button>
+                    <button nz-button nzType="info" (click)="showError()">确认框模式error</button>
+                    <button nz-button nzType="info" (click)="showWarning()">确认框模式warning</button>
+                    <button nz-button nzType="info" (click)="showConfirm()">确认框模式confirm</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

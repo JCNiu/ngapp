@@ -148,3 +148,135 @@
         }
     }
 }
+
+
+/*--------------------------------分割线---------------------------------------*/
+.demo3 {
+    .range[type=range]{ 
+        margin-top: 8px;
+        outline: none; 
+        -webkit-appearance: none;/*清除系统默认样式*/  
+        width:56% !important;  
+        background: -webkit-linear-gradient(#61bd12, #61bd12) no-repeat, #ddd;  
+        background-size: 30% 100%;/*设置左右宽度比例*/  
+        height: 3px;/*横条的高度*/  
+    } 
+    /*拖动块的样式*/  
+    .range[type=range]::-webkit-slider-thumb {  
+        -webkit-appearance: none;/*清除系统默认样式*/  
+        height:16px;/*拖动块高度*/  
+        width: 16px;/*拖动块宽度*/  
+        background: #fff;/*拖动块背景*/  
+        border-radius: 50%; /*外观设置为圆形*/  
+        border: solid 1px #ddd; /*设置边框*/  
+    } 
+
+}
+
+
+/*--------------------------------分割线---------------------------------------*/
+.demo4 {
+    .input-x {
+        position: relative;
+        /* fit-content见文章：https://www.zhangxinxu.com/wordpress/?p=5392 */
+        width: -webkit-fit-content;
+        width: -moz-fir-content;
+        width: fit-content;
+    }
+    .outline {
+        padding: 13px 16px 13px;
+        border: 1px solid #d0d0d5;
+        border-radius: 4px;
+        @include transition(border-color .25s);
+    }
+    .input-fill-x {
+        @extend .input-x;
+        border-bottom: 1px solid #d0d0d5;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -1px;
+            left: 0;
+            border-bottom: 2px solid #2486ff;
+            @include transform(scaleX(0));
+            @include transition(transform .25s);
+        }
+        /* :focus-within见文章：https://www.zhangxinxu.com/wordpress/?p=7327 */
+        &:focus-within::after {
+            @include transform(scaleX(1));
+        }
+        .input-fill {
+            padding: 20px 16px 6px;
+            border: 1px solid transparent;
+            background-color: #f5f5f5;
+            
+            /* 填充样式下label定位 */
+            &:not(:placeholder-shown) ~ .input-label,
+            &:focus ~ .input-label {
+                color: #2486ff;
+                @include transform(scale(.75) translateY(-14px));
+            }
+        }
+    }
+    .input-outline-x {
+        @extend .input-x;
+
+        .input-outline {
+            @extend .outline;
+
+            &:focus {
+                border-color: #2486ff;
+            }
+            /* 线框交互下有个白色背景 */
+            & ~ .input-label {
+                background-color: #fff;
+            }
+        }
+
+    }
+    .textarea-outline-x {
+        @extend .input-x;
+
+        .textarea-outline {
+            @extend .outline;
+
+            &:focus {
+                border-color: #2486ff;
+            }
+            /* 线框交互下有个白色背景 */
+            & ~ .input-label {
+                background-color: #fff;
+            }
+        }
+    }
+    .input-control {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 16px;
+        outline: none;
+        /* 默认placeholder颜色透明不可见 */
+        &:placeholder-shown::placeholder {
+            color: transparent;
+        }
+        /* 线框样式label定位 */
+        &:not(:placeholder-shown) ~ .input-label,
+        &:focus ~ .input-label {
+            color: #2486ff;
+            @include transform(scale(.75) translateY(-14px));
+        }
+    }
+    .input-label {
+        position: absolute;
+        top: 14px;
+        left: 16px;
+        padding: 0 2px;
+        line-height: 1.5;
+        color: #a2a9b6;
+        font-size: 16px;
+        pointer-events: none;
+        transform-origin: 0 0;
+        @include transition(all .25s);
+    }
+}

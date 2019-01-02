@@ -1,0 +1,107 @@
+@import '../nzstyle';
+.demo-1 {
+    a,button {
+        margin: 5px 10px;
+    }
+}
+
+
+
+/* layui风格 */
+.layui-btn-normal {
+    display: inline-block;
+    padding: 0 18px;
+    height: 38px;
+    box-sizing: border-box;
+    color: #fff;
+    line-height: 38px;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #1e9fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    @include transition(all .3s);
+
+    &:hover {
+        opacity: .8;
+    }
+    &:active {
+        opacity: 1;
+    }
+}
+::ng-deep .layui-nz-modal {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+    .ant-modal-content {
+        border-radius: 2px;
+
+        .ant-modal-header {
+            padding: 0 80px 0 20px;
+            height: 42px;
+            // line-height: 42px;
+            // color: #333;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            background-color: #F8F8F8;
+            border-bottom: 1px solid #eee;
+            border-radius: 2px 2px 0 0;
+            overflow: hidden;
+    
+            .ant-modal-title {
+                color: #333;
+                line-height: 42px;
+            }
+        }
+        .ant-modal-body {
+            padding: 10px;
+            color: #333;
+            background-color: #eee;
+        }
+        .ant-modal-footer {
+            .ant-btn {
+                display: inline-block;
+                margin: 5px 5px 0;
+                padding: 0 15px;
+                height: 28px;
+                line-height: 28px;
+                color: #333;
+                font-weight: 400;
+                background-color: #fff;
+                border: 1px solid #dedede;
+                border-radius: 2px;
+                cursor: pointer;
+                outline: 0;
+                
+                &:hover {
+                    opacity: .9;
+                }
+                &:active {
+                    opacity: .8;
+                }
+            }
+            .ant-btn-primary {
+                color: #fff;
+                background-color: #1E9FFF;
+                border-color: #1E9FFF;
+            }
+        }
+        .ant-modal-close {
+            color: #333;
+    
+            .ant-modal-close-x {
+                width: 42px;
+                height: 42px;
+                line-height: 42px;
+            }
+        }
+    }
+    
+}
+ 
