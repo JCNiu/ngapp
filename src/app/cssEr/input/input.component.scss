@@ -264,7 +264,7 @@
         &:not(:placeholder-shown) ~ .input-label,
         &:focus ~ .input-label {
             color: #2486ff;
-            @include transform(scale(.75) translateY(-14px));
+            @include transform(scale(.75) translate(-2px,-32px));
         }
     }
     .input-label {

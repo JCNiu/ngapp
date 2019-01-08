@@ -49,7 +49,7 @@ export const MENUES: menu[] = [
         },
         {
             index: 3,
-            name: '阴影 Shadow',
+            name: '阴影/边框 Shadow',
             url: csser + 'shadow'
         },
         {
@@ -86,6 +86,11 @@ export const MENUES: menu[] = [
             index: 10,
             name: '加载 load',
             url: csser + 'load'
+        },
+        {
+            index: 11,
+            name: '选项卡 tab',
+            url: csser + 'tab'
         }
         ]
     }

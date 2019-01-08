@@ -1,11 +1,19 @@
 @import '../csser';
 
+/* 阴影 */
+.c-content {
+    .demo-wrap-1 {
+        flex-direction: row;
+    }
+}
 .demo-shadow {
     display: inline-block;
     margin: 10px;
     width: 100px;
     height: 100px;
+    line-height: 100px;
     color: grey;
+    text-align: center;
     border-radius: 15px;
     box-shadow: 1px 1px 4px #000;
     background-color: #ccc;
@@ -31,8 +39,6 @@
                     0 0 0 9px #ea982e;
     }
 }
-
-
 .demo-wrap {
     // 很重要 关乎伪元素阴影能不能显现
     z-index: 1;
@@ -41,6 +47,8 @@
         margin: 10px;
         width: 300px;
         height: 100px;
+        line-height: 100px;
+        text-align: center;
         background-color: #ccc;
         border-radius: 10px;
         &.shadow8 {
@@ -68,5 +76,123 @@
                 transform: rotate(3deg);
             }
         }
+    }
+}
+
+
+/*---------------------------------------------------------------------------分割线---------------------------------------------------------------------------------------------*/
+
+
+/* 渐变虚框及边框滚动动画 */ 
+
+.demo2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    color: #333;
+
+    // 反向镂空实现渐变虚框
+    .box1 {
+        width: 150px;
+        background: linear-gradient(to bottom, #34538b, #cd0000);
+        background-origin: border-box;
+        border: 2px dashed #fff;
+
+        .content {
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            background-color: #fff;
+        }
+    }
+    // 借助css遮罩实现精致的渐变虚框
+    .box2 {
+        width: 200px;
+        height: 150px;
+        box-sizing: border-box;
+        line-height: 150px;
+        text-align: center;
+        border: 2px dashed #cd0000;
+    }
+    @supports (-webkit-mask:none) or (mask: none) {
+        .box2 {
+            background: linear-gradient(to bottom, #34538b, #cd0000) no-repeat;
+            border: none;
+            mask: linear-gradient(to right, #000 6px, transparent 6px) repeat-x,
+                    linear-gradient(to bottom, #000 6px, transparent 6px) repeat-y,
+                    linear-gradient(to right, #000 6px, transparent 6px) repeat-x 0 100%,
+                    linear-gradient(to bottom, #000 6px, transparent 6px) repeat-y 100% 0;
+            mask-size: 8px 2px, 2px 8px, 8px 2px, 2px 8px;
+        }
+    }
+    // 虚线边框滚动动画
+    .box3 {
+        width: 200px;
+        height: 130px;
+        background: repeating-linear-gradient(135deg, transparent, 
+                    transparent 3px, #000 3px, #000 8px);
+        overflow: hidden;
+        @include animation(shine 1s infinite linear);
+
+        .content {
+            margin: 1px;
+            padding: 10px;
+            height: 128px;
+            background-color: #fff;
+        }
+    }
+    @keyframes shine {
+        0% { background-position: -1px -1px; }
+        100% { background-position: -12px -12px; }
+    }
+    //实线边框loading动画
+    .box4 {
+        position: relative;
+        display: inline-block;
+        padding: 10px;
+        height: 114px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: 2px solid #cd0000;
+            @include animation(borderAround 1.5s infinite linear);
+        }
+        .content {
+            width: 128px;
+            height: 96px;
+            background-color: #ccc;
+        }
+    }
+    @include keyframes(borderAround) {
+        0%, 100% { clip: rect(0 148px 2px 0); }
+        25% { clip: rect(0 148px 116px 146px); }
+        50% { clip: rect(114px 148px 116px 0); }
+        75% { clip: rect(0 2px 116px 0); }
+    }
+    //双实线边框loading动画
+    .box5 {
+        @extend .box4;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: 2px solid #cd0000;
+            @include animation(borderAround2 1.5s infinite linear);
+        }
+    }
+    @include keyframes(borderAround2) {
+        50% { clip: rect(0 148px 2px 0); }
+        75% { clip: rect(0 148px 116px 146px); }
+        0%, 100% { clip: rect(114px 148px 116px 0); }
+        25% { clip: rect(0 2px 116px 0); }
     }
 }

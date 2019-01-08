@@ -1,0 +1,127 @@
+@import '../csser';
+
+.demo1 {
+    .box {
+        margin: auto;
+        width: 20em;
+        height: 10em;
+        border: 1px solid #ddd;
+        // 平滑滚动
+        scroll-behavior: smooth;
+        overflow: hidden;
+
+        .list {
+            position: relative;
+            height: 100%;
+            font-size: 8em;
+            text-align: center;
+            background-color: #ddd;
+            
+            & > input {
+                position: absolute;
+                top: 0;
+                margin: 0;
+                padding: 0;
+                width: 1px;
+                height: 100%;
+                border: 0;
+                clip: rect(0 0 0 0);
+            }
+        }
+    }
+    .link {
+        margin-top: 1em;
+
+        .click {
+            display: inline-block;
+            margin: 0.2em;
+            width: 2em;
+            height: 2em;
+            line-height: 2em;
+            color: #333;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    }
+}
+
+/*-----------------------------------------------------------分割线------------------------------------------------------------------------------*/
+
+.demo2 {
+    .tabs {
+        display: flex;
+
+        li {
+            position: relative;
+            padding: 10px 20px;
+            list-style: none;
+            color: #909399;
+            background-color: #fff;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 100%;
+                width: 0;
+                height: 2px;
+                background-color: #00adb5;
+                @include transition(all .4s);
+            }
+            &:hover {
+                color: #00adb5;
+                
+                &::after {
+                    left: 0;
+                    width: 100%;
+                    transition-delay: 0.1s;
+                }
+                & ~ li::after {
+                    left: 0;
+                }
+            }
+        }
+    }
+    .tabcs {
+        display: flex;
+
+        li {
+            position: relative;
+            padding: 10px 20px;
+            list-style: none;
+            color: #909399;
+            background-color: #fff;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                width: 0;
+                height: 2px;
+                background-color: #00adb5;
+                @include transition(all .4s);
+            }
+            &:hover {
+                color: #00adb5;
+                
+                &::after {
+                    width: 100%;
+                    transition-delay: 0.1s;
+                }
+                & ~ li::after {
+                    width: 0;
+                }
+            }
+        }
+    }
+}

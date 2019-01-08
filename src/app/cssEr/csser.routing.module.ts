@@ -14,7 +14,8 @@ let csser: string = 'csser-';
         { path: csser + 'price-list', loadChildren: './price-list/price-list.module#priceListModule' },
         { path: csser + 'navigation', loadChildren: './navigation/navigation.module#navigationModule' },
         { path: csser + 'animate', loadChildren: './animate/animate.module#animateModule' },
-        { path: csser + 'load', loadChildren: './load/load.module#loadModule' }
+        { path: csser + 'load', loadChildren: './load/load.module#loadModule' },
+        { path: csser + 'tab', loadChildren: './tab/tab.module#tabModule' }
     ]) ],
     exports: [ RouterModule ]
 })
