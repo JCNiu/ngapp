@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
     imports: [
         RouterModule.forChild([
             { path: 'nz-modal', loadChildren: './nz-modal/nz-modal.module#nzModalModule'},
+            { path: 'nz-tree', loadChildren: './nz-tree/nz-tree.module#nzTreeModule'},
         ])
     ],
     exports: [

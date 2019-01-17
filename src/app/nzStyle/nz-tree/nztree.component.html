@@ -1,0 +1,53 @@
+<div class="c-container">
+    <div class="c-content">
+
+        <h2>树形控件 tree</h2>
+        <div class="demo-wrap">
+            <p class="demo-label"></p>
+            <div class="demo demo-1">
+                <div class="demo-row">
+                    <!-- 受控操作示例 -->
+                    <div class="demo-row-col">
+                        <nz-tree
+                        [nzData]="nodes"
+                        nzCheckable="true"
+                        nzMultiple="true"
+                        [nzCheckedKeys]="defaultCheckedKeys"
+                        [nzExpandedKeys]="defaultExpandedKeys"
+                        [nzSelectedKeys]="defaultSelectedKeys"
+                        (nzClick)="nzEvent($event)"
+                        (nzExpandChange)="nzEvent($event)"
+                        (nzCheckBoxChange)="nzEvent($event)">
+                    </nz-tree>
+                    </div>
+
+                    <!-- 自定义图标示例 -->
+                    <div class="demo-row-col">
+                        <nz-tree
+                        [nzData]="nodesicon"
+                        nzShowIcon="true">
+                        </nz-tree>
+                    </div>
+
+                    <!-- 受控操作 + 自定义图标示例 -->
+                    <div class="demo-row-col">
+                        <nz-tree
+                        [nzData]="nodesicon2"
+                        nzCheckable="true"
+                        nzMultiple="true"
+                        [nzCheckedKeys]="defaultCheckedKeys2"
+                        [nzExpandedKeys]="defaultExpandedKeys2"
+                        [nzSelectedKeys]="defaultSelectedKeys2"
+                        (nzClick)="nzEvent($event)"
+                        (nzExpandChange)="nzEvent($event)"
+                        (nzCheckBoxChange)="nzEvent($event)"
+                        nzShowIcon="true">
+                        </nz-tree>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</div>

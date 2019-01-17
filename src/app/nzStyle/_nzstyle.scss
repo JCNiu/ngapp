@@ -43,7 +43,11 @@
             background-color: #fff;
         } 
         .demo {
-
+            width: 100%;
+            
+            .demo-row {
+                width: 100%;
+            }
         }
     }
 

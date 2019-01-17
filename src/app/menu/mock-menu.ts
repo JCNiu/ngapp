@@ -27,7 +27,12 @@ export const MENUES: menu[] = [
             index: 0,
             name: '对话框 modal',
             url: nz + 'modal'
-        }]
+        },{
+            index: 1,
+            name: '树形控件 tree',
+            url: nz + 'tree'
+        },
+        ]
     },
     {
         index: 2, 
